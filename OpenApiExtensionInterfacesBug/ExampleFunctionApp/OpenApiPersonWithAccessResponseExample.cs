@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using ExampleFunctionApp.Models;
+﻿using ExampleFunctionApp.Models;
 using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Abstractions;
 using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Resolvers;
 using Newtonsoft.Json.Serialization;
@@ -10,12 +9,11 @@ public class OpenApiPersonWithAccessResponseExample : OpenApiExample<OpenApiPers
 {
     public override IOpenApiExample<OpenApiPersonWithAccessResponseExample> Build(NamingStrategy namingStrategy = null)
     {
-        var person = new AccessBook()
+        var personsWithAccessBook = new PersonsWithAccessBook()
         {
 
-        }
-        
-        this.Examples.Add(OpenApiExampleResolver.Resolve(nameof(AccessBook), appleSalad, namingStrategy));
+        };
+        this.Examples.Add(OpenApiExampleResolver.Resolve(nameof(PersonsWithAccessBook), personsWithAccessBook, namingStrategy));
 
         return this;
     }

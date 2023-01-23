@@ -16,7 +16,7 @@ public static class ExampleHttpFunction
 {
     [FunctionName(nameof(ExampleFunction))]
     [OpenApiOperation(nameof(ExampleFunction), Summary = "Example Function for reproducing bug.")]
-    [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, bodyType: typeof(AccessBook), contentType:"application/json", Example = typeof(OpenApiPersonWithAccessResponseExample))]
+    [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, bodyType: typeof(PersonsWithAccessBook), contentType:"application/json", Example = typeof(OpenApiPersonWithAccessResponseExample))]
     public static async Task<IActionResult> ExampleFunction(
         [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req, ILogger log)
     {
